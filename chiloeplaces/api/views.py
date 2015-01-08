@@ -4,6 +4,6 @@ from models import *
 from serializers import *
 # Create your views here.
 
-class LugarViewSet(viewsets.ViewSet):
+class LugarViewSet(viewsets.ModelViewSet):
   queryset = Lugar.objects.all()
   serializer_class = LugarSerializer
