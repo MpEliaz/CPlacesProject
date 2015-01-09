@@ -36,8 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
     'rest_framework',
+    'api',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,10 +60,12 @@ WSGI_APPLICATION = 'chiloeplaces.wsgi.application'
 
 DATABASES = {
     'default': {
+
+
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cplaces',
         'USER': 'root',
-        'PASSWORD': 'dwdrums',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
