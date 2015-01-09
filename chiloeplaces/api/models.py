@@ -10,6 +10,9 @@ class Lugar(models.Model):
     creado_por = models.ForeignKey(User)
     fecha = models.DateTimeField(auto_now=True)
 
+    def __unicode__(self):
+        return u'{0}'.format(self.nombre)
+
 class Ubicacion(models.Model):
     latitud = models.FloatField()
     longitud = models.FloatField()
@@ -21,6 +24,14 @@ class Comuna(models.Model):
 
 	def __unicode__(self):
 		return u'{0}'.format(self.nombre)
+
+class Imagenes(models.Model):
+    url = models.CharField(max_length=200)
+    descripcion = models.CharField(max_length=300)
+    lugar = models.ForeignKey('Lugar')
+
+    def __unicode__(self):
+		return u'{0}'.format(self.url)
 
 
 

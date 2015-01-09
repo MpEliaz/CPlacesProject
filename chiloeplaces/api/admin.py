@@ -5,3 +5,5 @@ from models import *
 
 admin.site.register(Lugar)
 admin.site.register(Ubicacion)
+admin.site.register(Imagenes)
+admin.site.register(Comuna)
