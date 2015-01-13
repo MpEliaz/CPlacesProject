@@ -4,8 +4,6 @@ from django.contrib.auth.models import User
 class Imagenes(models.Model):
     url = models.CharField(max_length=200)
     descripcion = models.CharField(max_length=300, blank=True)
-    #lugar = models.ForeignKey('Lugar', related_name='imagenes', null=True)
-
     def __unicode__(self):
 		return u'{0}'.format(self.url)
 
@@ -46,7 +44,7 @@ class Actividad(models.Model):
     direccion = models.CharField(max_length=140, null=True)
     descripcion = models.CharField(max_length=300)
     valor = models.IntegerField(blank=True, null=True)
-    fecha_inicio = models.DateTimeField(blank=True)
+    fecha_inicio = models.DateTimeField(blank=True, null=True)
     fecha_termino = models.DateTimeField(blank=True, null=True)
     lugar = models.CharField(max_length=140)
     comuna = models.OneToOneField(Comuna)

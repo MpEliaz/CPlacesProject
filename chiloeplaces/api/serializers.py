@@ -4,7 +4,7 @@ from models import *
 class ImagenSerializer(serializers.ModelSerializer):
     class Meta:
         model = Imagenes
-        fields = ('id', 'url', 'descripcion', 'lugar')
+        fields = ('id', 'url', 'descripcion')
 
 class UbicacionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,7 +26,10 @@ class ComunaSerializer(serializers.ModelSerializer):
         fields = ('id', 'nombre', 'descripcion')
 
 class ActividadSerializer(serializers.ModelSerializer):
+
+    imagenes = serializers.StringRelatedField(many=True, read_only=False)
+
     class Meta:
         model = Actividad
-        fields = ('id', 'nombre', 'descripcion', 'valor', 'fecha_inicio', 'fecha_termino', 'lugar', 'comuna')
+        fields = ('id', 'nombre', 'direccion', 'descripcion', 'valor', 'fecha_inicio', 'fecha_termino', 'lugar', 'comuna', 'imagenes')
 
